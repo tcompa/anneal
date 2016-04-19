@@ -10,10 +10,23 @@ You can follow [these steps](#install-anneal) to install anneal, or just
 [give it a try](#give-it-a-try-without-installing) without installing it.
 
 ### Install anneal
+To install anneal, follow these instructions:
+
++ Clone this repository, and enter the folder:
 ```
-git clone git@github.com:tcompa/anneal.git
-python setup.py
+git clone git@github.com:tcompa/anneal.git .
+cd anneal
 ```
++ Use the setup.py script (the `--record` option is helpful to later uninstall this package).
+```
+python setup.py --record installed_files.txt
+```
+
+#### Versions and requirements
+Anneal is tested on python 2.7 and 3.4.
+On python 2.7, the [future](https://pypi.python.org/pypi/future) package is required.  
+Some of the examples additionally require [numpy](http://www.numpy.org/) and [matplotlib](http://matplotlib.org/).
+
 
 ### Give it a try (without installing)
 If you prefer not to install this package, just copy the file
