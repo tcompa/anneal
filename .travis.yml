@@ -14,12 +14,12 @@ sudo: false
 
 python:
   - 2.7
-  - 3.3
   - 3.4
-  - 3.5
+#  - 3.3
+#  - 3.5
 
 env:
-  - CONDA_DEPS="pip nose builtins numpy" PIP_DEPS=""
+  - CONDA_DEPS="pip nose future numpy" PIP_DEPS=""
 
 before_install:
 - export MINICONDA=$HOME/miniconda
