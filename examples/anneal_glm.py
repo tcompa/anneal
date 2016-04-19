@@ -8,7 +8,7 @@ notes: performs one simulated-annealing run, for a GLM problem.
 import numpy
 import matplotlib.pyplot as plt
 
-from lib_simulated_annealing import simulated_annealing
+from anneal import simulated_annealing
 from lib_general_linear_model import GLM
 
 # define D-dimensional General Linear Model: Y=M*X+Q
