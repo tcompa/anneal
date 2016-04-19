@@ -36,8 +36,8 @@ All the rest is the same as in [How to use anneal](#how-to-use-anneal).
 
 ### How to use anneal
 First, you need to define a class which describes your optimization problem.
-This class needs to include (at least) the following methods and members:
-+ **Members**:
+This class needs to include (at least) the following attributes and methods:
++ **Attributes**:
   + beta: the inverse temperature (could be the 'real' inverse temperature, or an artificial parameter).
   + energy: the quantity which will be minimised.
 + **Methods**:
@@ -104,3 +104,8 @@ P, E, t = simulated_annealing(P, ID, beta_min=1e-2, beta_max=1e2,
 The output `E` is a list of the values of the energy during the optimization.
 
 More examples are available in the [examples](examples) directory.
+
+###Note
+The simulated-annealing library itself is not optimized in any way, assuming
+that the time-consuming part of the code is somewhere in the class defining the
+optimization problem (e.g. in the Monte Carlo moves).

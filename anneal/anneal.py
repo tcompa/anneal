@@ -21,13 +21,13 @@ def simulated_annealing(P, ID, beta_min=1e-2, beta_max=1e2,
     Parameters
     ----------
     P : object
-        Instance of a custom class, with methods:
+        Instance of a custom class, wich includes attributes
+            P.beta
+            P.energy
+        and methods:
             P.set_beta(beta)
             P.MC_move(), returning 1/0 (accepted/rejected)
             P.update_MC_parameters(acc_ratio)
-        and members
-            P.beta
-            P.energy
     ID : str
         Label for the problem under study.
     beta_min : float, optional
