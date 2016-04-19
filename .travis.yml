@@ -19,7 +19,7 @@ python:
   - 3.5
 
 env:
-  - CONDA_DEPS="pip nose coverage numpy" PIP_DEPS="coveralls"
+  - CONDA_DEPS="pip nose numpy" PIP_DEPS=""
 
 before_install:
 - export MINICONDA=$HOME/miniconda
@@ -38,11 +38,11 @@ install:
 - python setup.py install --record installed_files.txt
 
 script:
-- nosetests -v --with-coverage --cover-package=anneal
+- nosetests -v #--with-coverage --cover-package=anneal
 #- flake8 --ignore N802,N806 `find . -name \*.py | grep -v setup.py | grep -v /doc/`
 
-after_success:
-- coveralls
+#after_success:
+#- coveralls
 
 before_cache:
 # clean unused packages & installed files from conda cache
