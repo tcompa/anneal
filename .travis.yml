@@ -19,7 +19,7 @@ python:
   - 3.5
 
 env:
-  - CONDA_DEPS="pip nose numpy" PIP_DEPS=""
+  - CONDA_DEPS="pip nose builtins numpy" PIP_DEPS=""
 
 before_install:
 - export MINICONDA=$HOME/miniconda
