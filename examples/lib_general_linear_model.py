@@ -15,7 +15,48 @@ from builtins import object   # python 2/3 compatibility
 
 class GLM(object):
     '''
-    asdasd
+    Generalized Linear Model instance.
+
+    Given two set of D-dimensional vectors x_0,..,x_N and y_0,..,y_N,
+    and given a DxD matrix M and a D-dimensional vector Q, the
+    likelihood is defined as
+        L = \prod_{i=0}^{N-1} exp(-(y_i - (M*x_i + Q))^2)
+
+    This is interpreted as a system with energy E(Q, M) equal to
+    -log(L), and a probability distribution for Q and M is
+    introduced as
+        P(Q, M) = exp(-beta*E(Q, M))
+
+    Attributes
+    ----------
+    D : int
+        Number of dimensions.
+    N : int
+        Number of data points.
+    x, y : array
+        Data points.
+    Q0, M0 : array
+        Initial estimates of Q (D-dimensional) and M (DxD-dimensional).
+    Q, M : array
+        Current estimates of Q (D-dimensional) and M (DxD-dimensional).
+    beta : float
+        Current inverse temperature.
+    energy : float
+        Current energy.
+    dQ, dM : float
+        Step-size for Monte Carlo moves in dQ and DM.
+
+    Methods
+    -------
+
+    compute_energy(Q, M)
+        Compute energy.
+    set_beta(beta)
+        Set beta to a new value.
+    update_MC_parameters(acc_ratio)
+        Update dQ and dM.
+    MC_move()
+        Perform a Monte Carlo move.
     '''
 
     def __init__(self, x_points, y_points, Q0=None, M0=None):
@@ -45,7 +86,7 @@ class GLM(object):
         self.beta = 1e8
 
     def compute_energy(self, Q, M):
-        dev_squ_i = ((self.y - (numpy.matmul(self.x, M) + Q)) ** 2).sum(axis=1)
+        dev_sq_i = ((self.y - (numpy.matmul(self.x, M) + Q)) ** 2).sum(axis=1)
         return dev_sq_i.mean()
 
     def set_beta(self, beta):

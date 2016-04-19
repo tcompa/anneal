@@ -1,26 +1,24 @@
 ## anneal
 [![Build Status](https://travis-ci.org/tcompa/anneal.svg?branch=master)](https://travis-ci.org/tcompa/anneal)
 
-Anneal implements a general-purpose simulated-annealing optimization algorithm,
-originally written for a
-[sudoku solver](https://github.com/tcompa/sudoku_simulated_annealing).
-It can be used with any class ...
+Anneal implements a general-purpose simulated-annealing optimization algorithm (originally written for a [sudoku solver](https://github.com/tcompa/sudoku_simulated_annealing)).
+The optimization procedure is decoupled from the optimization problem, so that it can be used in a large set of different cases.
 
-You can follow [these steps](#install-anneal) to install anneal, or just
-[give it a try](#give-it-a-try-without-installing) without installing it.
+You can follow [these steps](#install-anneal) to install anneal, or just [give it a try](#give-it-a-try-without-installing) without installing it.
 
 ### Install anneal
 To install anneal, follow these instructions:
 
-+ Clone this repository, and enter the folder:
+Clone this repository
 ```
 git clone git@github.com:tcompa/anneal.git .
 cd anneal
 ```
-+ Use the setup.py script (the `--record` option is helpful to later uninstall this package).
+Use the setup.py script
 ```
 python setup.py --record installed_files.txt
 ```
+(the `--record` option is helpful to later uninstall this package).
 
 #### Versions and requirements
 Anneal is tested on python 2.7 and 3.4.
@@ -28,19 +26,17 @@ On python 2.7, the [future](https://pypi.python.org/pypi/future) package is requ
 Some of the examples additionally require [numpy](http://www.numpy.org/) and [matplotlib](http://matplotlib.org/).
 
 
-### Give it a try (without installing)
+#### Give it a try (without installing)
 If you prefer not to install this package, just copy the file
-[anneal.py](anneal/anneal.py) in your working directory, and import the
-`simulated_annealing` function.
-All the rest is the same as in [How to use anneal](#how-to-use-anneal).
+[anneal.py](anneal/anneal.py) in your working directory, and proceed as in the [How to use anneal](#how-to-use-anneal) section.
 
 ### How to use anneal
 First, you need to define a class which describes your optimization problem.
 This class needs to include (at least) the following attributes and methods:
-+ **Attributes**:
++ Attributes:
   + beta: the inverse temperature (could be the 'real' inverse temperature, or an artificial parameter).
   + energy: the quantity which will be minimised.
-+ **Methods**:
++ Methods:
   + set_beta(beta): change the value of beta.
   + MC_move(): perform a Monte Carlo move, and return 1 or 0 if this is accepted/rejected.
   + update_MC_parameters(acc_ratio): update the Monte Carlo parameters, trying to keep the acceptance ratio in a reasonable interval.
@@ -52,7 +48,7 @@ Then you can import the annealing function via
 and use it on an instance of your class (see examples below).
 
 
-### Examples
+#### Examples
 A simple example of how to use anneal is the following.
 First, we define the `Potential_1d` class, as
 ```python

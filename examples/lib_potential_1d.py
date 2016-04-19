@@ -12,7 +12,30 @@ from builtins import object   # python 2/3 compatibility
 
 class Potential_1d(object):
     '''
-    Naive class, to test the simulated-annealing function.
+    One-dimensional potential instance.
+
+    Attributes
+    ----------
+    x : float
+        Current configuration.
+    energy : float
+        Energy of the current configuration.
+    beta : float
+        Current inverse temperature.
+    dx : float
+        Step-size for Monte Carlo moves.
+
+    Methods
+    -------
+
+    compute_energy()
+        Compute energy.
+    set_beta(beta)
+        Set beta to a new value.
+    update_MC_parameters(acc_ratio)
+        Update dx.
+    MC_move()
+        Perform a Monte Carlo move.
     '''
 
     def __init__(self):
