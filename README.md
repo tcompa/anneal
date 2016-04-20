@@ -23,7 +23,7 @@ python setup.py --record installed_files.txt
 #### Versions and requirements
 Anneal is tested on python 2.7 and 3.4.
 On python 2.7, the [future](https://pypi.python.org/pypi/future) package is required.  
-Some of the examples additionally require [numpy](http://www.numpy.org/) and [matplotlib](http://matplotlib.org/).
+Some of the examples additionally require [numpy](http://www.numpy.org/) (version >=1.10) and [matplotlib](http://matplotlib.org/) (version >=1.5).
 
 
 #### Give it a try (without installing)
