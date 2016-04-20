@@ -1,5 +1,7 @@
 ## anneal
 [![Build Status](https://travis-ci.org/tcompa/anneal.svg?branch=master)](https://travis-ci.org/tcompa/anneal)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.50116.svg)](http://dx.doi.org/10.5281/zenodo.50116)
+
 
 Anneal implements a general-purpose simulated-annealing optimization algorithm (originally written for a [sudoku solver](https://github.com/tcompa/sudoku_simulated_annealing)).
 The optimization procedure is decoupled from the optimization problem, so that it can be used in a large set of different cases.
