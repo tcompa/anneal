@@ -33,7 +33,7 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages',
+    #'sphinx.ext.githubpages',
     'numpydoc',
 ]
 
