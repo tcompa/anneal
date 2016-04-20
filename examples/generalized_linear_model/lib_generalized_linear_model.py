@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 '''
-program: lib_general_linear_model.py
+program: lib_generalized_linear_model.py
 author: tc
 created: 2016-04-19 -- 9:30 CEST
 '''

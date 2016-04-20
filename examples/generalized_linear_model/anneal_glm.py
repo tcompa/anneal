@@ -9,7 +9,7 @@ import numpy
 import matplotlib.pyplot as plt
 
 from anneal import simulated_annealing
-from lib_general_linear_model import GLM
+from lib_generalized_linear_model import GLM
 
 # define D-dimensional General Linear Model: Y=M*X+Q
 D = 25
