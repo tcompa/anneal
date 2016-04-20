@@ -11,6 +11,7 @@ You can follow [these steps](#install-anneal) to install anneal, or just [give i
 ### Install anneal
 To install anneal, follow these instructions:
 
+##### Manual install
 Clone this repository
 ```
 git clone git@github.com:tcompa/anneal.git .
@@ -22,15 +23,21 @@ python setup.py install --record installed_files.txt
 ```
 (the `--record` option is helpful to later uninstall this package).
 
-#### Versions and requirements
+##### Using pip
+If you use `pip` as a package manager, anneal can be installed via
+```
+pip install https://github.com/tcompa/anneal/archive/v1.0.zip
+```
+(for version 1.0).
+
+##### Give it a try (without installing)
+If you prefer not to install this package, just copy the file
+[anneal.py](anneal/anneal.py) in your working directory, and proceed as in the [How to use anneal](#how-to-use-anneal) section.
+
+##### Versions and requirements
 Anneal is tested on python 2.7 and 3.4.
 On python 2.7, the [future](https://pypi.python.org/pypi/future) package is required.  
 Some of the examples additionally require [numpy](http://www.numpy.org/) (version >=1.10) and [matplotlib](http://matplotlib.org/) (version >=1.5).
-
-
-#### Give it a try (without installing)
-If you prefer not to install this package, just copy the file
-[anneal.py](anneal/anneal.py) in your working directory, and proceed as in the [How to use anneal](#how-to-use-anneal) section.
 
 ### How to use anneal
 First, you need to define a class which describes your optimization problem.
@@ -50,7 +57,7 @@ Then you can import the annealing function via
 and use it on an instance of your class (see examples below).
 
 
-#### Examples
+##### Examples
 A simple example of how to use anneal is the following.
 First, we define the `Potential_1d` class, as
 ```python
