@@ -18,29 +18,52 @@ import math
 
 class Sudoku(object):
     '''
-    Members:
-        scheme     : 9x9 numpy array of integers
-        energy
-        beta
-    Methods:
-        __init__(input_file, seed=0)
-        _load_puzzle(filename)
-        _fill_puzzle()
-        _get_box(i, j)
-        _total_energy()
-        _local_energy(i ,j)
-        set_beta()
-        MC_move()
-        print_puzzle()
+    Class which encodes a sudoku puzzle and Monte Carlo steps towards
+    neighboring configurations.
+
+    Attributes
+    ----------
+    scheme : array of int
+        9x9 array of integers, encodes the sudoku puzzle.
+    energy : int
+        Current value of the energy.
+    beta : float
+        Current value of the inverse temperature.
+
+    Methods
+    -------
+    set_beta()
+        Set the value of the beta attribute.
+    MC_move()
+        Perform a Monte Carlo move.
+    update_MC_parameters()
+        Empty method (required for the class to be used by `anneal`).
+    print_puzzle()
+        Print the currest puzzle configuration.
+
+    Notes
+    -----
+    _load_puzzle(filename)
+        Load a puzzle from the file <filename>.
+    _fill_puzzle()
+        Fill all empty cells.
+    _get_box(i, j)
+        
+    _total_energy()
+    _local_energy(i ,j)
     '''
 
     def __init__(self, input_file, seed=0):
         '''
-        Initializes an instance of the Sudoku class.
-        Arguments:
-            input_file : file with the puzzle
-            seed*      : seed for the random-number generator (if 0, a random
-                         value is chosen as seed)
+        Initialize an instance of the Sudoku class.
+
+        Arguments
+        ---------
+        input_file : str
+            File with the puzzle.
+        seed : int
+            Seed for the random-number generator (if 0, a random value
+            is chosen as seed).
         '''
         print('[sudoku] init')
         if seed == 0:
@@ -94,7 +117,7 @@ class Sudoku(object):
         '''
         E = 0
         list_i = list(range(9))
-        list_j = [0, 3, 6, 1, 4, 7, 2, 5, 8]
+        self.list_j = [0, 3, 6, 1, 4, 7, 2, 5, 8]
         for ind in range(9):
             E += self._local_energy(list_i[ind], list_j[ind])
         return E
@@ -126,12 +149,16 @@ class Sudoku(object):
         self.beta = beta
 
     def update_MC_parameters(self, dummy):
+        '''
+        Fake method, needed to satisfy requirements of
+        anneal.simulated_annealing function.
+        '''
         pass
 
     def MC_move(self):
         '''
-        Proposes to replace one of the non-fixed cells with a random entry, and
-        accepts/rejects according to Metropolis rule.
+        Proposes to replace one of the non-fixed cells with a random
+        entry, and accepts/rejects according to Metropolis rule.
         '''
         i, j = random.choice(self.non_clues)
         E_ij_old = self._local_energy(i, j)
