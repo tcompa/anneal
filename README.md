@@ -18,7 +18,7 @@ cd anneal
 ```
 Use the setup.py script
 ```
-python setup.py --record installed_files.txt
+python setup.py install --record installed_files.txt
 ```
 (the `--record` option is helpful to later uninstall this package).
 
