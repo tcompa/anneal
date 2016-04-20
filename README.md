@@ -11,24 +11,22 @@ You can follow [these steps](#install-anneal) to install anneal, or just [give i
 ### Install anneal
 To install anneal, follow these instructions:
 
-##### Manual install
-Clone this repository
-```
-git clone git@github.com:tcompa/anneal.git .
-cd anneal
-```
-Use the setup.py script
-```
-python setup.py install --record installed_files.txt
-```
-(the `--record` option is helpful to later uninstall this package).
-
 ##### Using pip
 If you use `pip` as a package manager, anneal can be installed via
 ```
 pip install https://github.com/tcompa/anneal/archive/v1.0.zip
 ```
 (for version 1.0).
+
+##### Manual install
+Clone this repository, then use the setup.py script:
+```
+git clone git@github.com:tcompa/anneal.git .
+cd anneal
+python setup.py install --record installed_files.txt
+```
+(the `--record` option is helpful to later uninstall this package).  
+**Warning**: this procedure will install the current development version.
 
 ##### Give it a try (without installing)
 If you prefer not to install this package, just copy the file

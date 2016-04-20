@@ -1,7 +1,7 @@
-'''
-program: anneal.py
-author: tc
-created: 2016-04-19 -- 11 CEST
+'''Main module for anneal.
+
+This module contains the main (and only, by now) function of anneal:
+simulated_annealing.
 '''
 
 from __future__ import print_function
@@ -22,12 +22,16 @@ def simulated_annealing(P, ID, beta_min=1e-2, beta_max=1e2,
     ----------
     P : object
         Instance of a custom class, wich includes attributes
-            P.beta
-            P.energy
+
+        + P.beta
+        + P.energy
+
         and methods:
-            P.set_beta(beta)
-            P.MC_move(), returning 1/0 (accepted/rejected)
-            P.update_MC_parameters(acc_ratio)
+
+        + P.set_beta(beta)
+        + P.MC_move(), returning 1/0 (accepted/rejected)
+        + P.update_MC_parameters(acc_ratio)
+
     ID : str
         Label for the problem under study.
     beta_min : float, optional
