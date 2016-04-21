@@ -33,8 +33,8 @@ If you prefer not to install this package, just copy the file
 [anneal.py](anneal/anneal.py) in your working directory, and proceed as in the [How to use anneal](#how-to-use-anneal) section.
 
 ##### Versions and requirements
-Anneal is tested on python 2.7 and 3.4.
-On python 2.7, the [future](https://pypi.python.org/pypi/future) package is required.  
+Anneal is tested on python 2.7 and 3.4, without additional dependencies.  
+On python 2.7, the [future](https://pypi.python.org/pypi/future) package is required for the tests and for some examples.  
 Some of the examples additionally require [numpy](http://www.numpy.org/) (version >=1.10) and [matplotlib](http://matplotlib.org/) (version >=1.5).
 
 ### How to use anneal

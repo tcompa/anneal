@@ -4,8 +4,6 @@ This module contains the main (and only, by now) function of anneal:
 simulated_annealing.
 '''
 
-from __future__ import print_function
-from builtins import range
 import time
 
 __all__ = ['simulated_annealing']

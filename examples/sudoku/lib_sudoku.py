@@ -117,7 +117,7 @@ class Sudoku(object):
         '''
         E = 0
         list_i = list(range(9))
-        self.list_j = [0, 3, 6, 1, 4, 7, 2, 5, 8]
+        list_j = [0, 3, 6, 1, 4, 7, 2, 5, 8]
         for ind in range(9):
             E += self._local_energy(list_i[ind], list_j[ind])
         return E
