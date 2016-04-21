@@ -7,6 +7,8 @@
 Welcome to anneal's documentation!
 ==================================
 
+Here I say something.
+
 Contents
 --------
 
