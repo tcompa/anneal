@@ -9,5 +9,5 @@ Thre optimization problems are considered:
    + class
    + solver
  + The problem of parameters fitting for a Generalized Linear Model (GLM):
-   + [lib_generalize_linear_model.py](generalized_linear_model/lib_generalize_linear_model.py) defines a [Generalized Linear Model](https://en.wikipedia.org/wiki/Generalized_linear_model), for which one wants to perform maximum-likelihood estimation of the parameters.
+   + [lib_generalize_linear_model.py](generalized_linear_model/lib_generalized_linear_model.py) defines a [Generalized Linear Model](https://en.wikipedia.org/wiki/Generalized_linear_model), for which one wants to perform maximum-likelihood estimation of the parameters.
    + [anneal_glm.py](generalized_linear_model/anneal_glm.py): performs a single simulated-annealing run, for the GLM problem.
